@@ -10,7 +10,7 @@ local get = setmetatable({}, {
     end
 })
 
-local tab1, tab2, tab3, tab4 = gui:AddTab("Chính"), gui:AddTab("Cày"), gui:AddTab("người huấn luyện"), gui:AddTab("cài đặt")
+local tab1, tab2, tab3, tab4 = gui:AddTab("Main"), gui:AddTab("Farm Options"), gui:AddTab("Trainer"), gui:AddTab("Misc")
 local btn, btn2, btn3, key, nmc, trainers, labels
 local findobj, findobjofclass, waitforobj, fire, invoke = get.FindFirstChild, get.FindFirstChildOfClass, get.WaitForChild, Instance.new("RemoteEvent").FireServer, Instance.new("RemoteFunction").InvokeServer
 local player = get.Players.LocalPlayer
@@ -22,7 +22,7 @@ local oldtick, farmtick = 0, 0
 local camera = workspace.CurrentCamera
 local myData = loadstring(game:HttpGet("https://raw.githubusercontent.com/z4gs/scripts/master/Settings.lua"))()("Ro-Ghoul Autofarm", {
     Skills = {
-        E = false,
+        E = true,
         F = true,
         C = true,
         R = true
@@ -34,8 +34,8 @@ local myData = loadstring(game:HttpGet("https://raw.githubusercontent.com/z4gs/s
         ["Nishiki Nishio"] = true,
 	["Touka Kirishima"] = true
     },
-    DistanceFromNpc = 5,
-    DistanceFromBoss = 8,
+    DistanceFromNpc = 8,
+    DistanceFromBoss = 10,
     TeleportSpeed = 160,
     ReputationFarm = true,
     ReputationCashout = true,
